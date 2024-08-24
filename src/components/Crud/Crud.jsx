@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { saveUser } from "./utils/request";
 
 export default function Crud() {
   const [data, setData] = useState({
@@ -34,10 +35,16 @@ export default function Crud() {
     });
   };
 
+  const onSubmitData = async(e) => {
+    e.preventDefault();
+    console.log(await saveUser(data.name, data.last_name, data.age));
+  };
+
   return (
     <form
+      onSubmit={onSubmitData}
       action=""
-      className="rounded-md flex flex-col items-center h-[90.5vh] p-20 bg-gray-900"
+      className="rounded-md flex flex-col items-center p-20 bg-gray-900"
     >
       <section className="grid w-[60%] columns-1 gap-y-4">
         <input

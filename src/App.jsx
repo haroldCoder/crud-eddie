@@ -1,6 +1,7 @@
 import './App.css'
 import Crud from './components/Crud/Crud'
 import Navbar from './components/Navbar/Navbar'
+import UsersTargets from './views/UsersTargets'
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <Navbar />
       <Crud />
+      <UsersTargets />
     </>
   )
 }
